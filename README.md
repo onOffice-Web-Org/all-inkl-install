@@ -1,5 +1,5 @@
 # All-Inkl-Install for oOWeb
-Installation script for ALL-INKL.COM (Composer, WP-CLI, node, npm, ...)
+Installation script for ALL-INKL.COM (WP-CLI, node, npm)
 
 ## How to run
 1. Clone repository
@@ -7,9 +7,8 @@ Installation script for ALL-INKL.COM (Composer, WP-CLI, node, npm, ...)
 3. Run script ("./oo-install.sh")
 
 ## What is being installed?
-1. Composer (Package manager for PHP applicaitons)
-2. WP-CLI (Command line interface for WordPress)
-3. NVM (Version Manager for Node.js)
+1. WP-CLI (Command line interface for WordPress)
+2. NVM (Version Manager for Node.js)
 
 ---
 
