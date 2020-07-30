@@ -1,5 +1,5 @@
 #!/bin/bash
-readonly OOISVER="1.0.0"
+readonly OOISVER="1.0.2"
 readonly OOIS="oOWeb-Install-Script $OOISVER"
 
 
@@ -7,7 +7,6 @@ readonly OOIS="oOWeb-Install-Script $OOISVER"
 ACCOUNTNR=${USER##*\-} # # ACCOUNTNR=${LOGNAME:4}
 ACCOUNTDIR=/www/htdocs/$ACCOUNTNR
 TOOLDIR=$ACCOUNTDIR/_oo-web-tools
-COMPOSERDIR=$TOOLDIR/composer
 WPCLIDIR=$TOOLDIR/wp-cli
 ### /SET SOME DIRECTORIES ###
 
@@ -15,15 +14,6 @@ clear
 
 cd $ACCOUNTDIR
 mkdir $TOOLDIR
-
-
-### INSTALL COMPOSER ###
-mkdir $COMPOSERDIR
-cd $COMPOSERDIR
-curl -sS https://getcomposer.org/installer | php74
-echo "alias composer='$COMPOSERDIR/composer.phar' " >> $ACCOUNTDIR/.user_bashrc
-cd $ACCOUNTDIR
-### /INSTALL COMPOSER ###
 
 
 ### INSTALL WP-CLI ###
