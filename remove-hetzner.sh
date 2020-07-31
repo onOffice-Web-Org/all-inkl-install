@@ -13,7 +13,7 @@ ACCOUNTNR=${USER##*\-}
 ACCOUNTDIR=/www/htdocs/$ACCOUNTNR
 WPCLIRUNNER=$ACCOUNTDIR/_oo-web-tools/wp-cli/wp-cli.phar
 
-PLUGINSTOKILL="hello akismet login-lockdown wp-rocket w3-total-cache"
+PLUGINSTOKILL="hello akismet login-lockdown wp-rocket w3-total-cache patch-plugin"
 
 THEMESTOKILL="twentyfifteen twentysixteen twentyseventeen twentynineteen twentytwenty"
 
