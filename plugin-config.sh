@@ -13,8 +13,8 @@ ACCOUNTNR=${USER##*\-}
 ACCOUNTDIR=/www/htdocs/$ACCOUNTNR
 WPCLIRUNNER=$ACCOUNTDIR/_oo-web-tools/wp-cli/wp-cli.phar
 
-PLUGINSTOINSTALL="iwp-client all-in-one-wp-security-and-firewall head-footer-code wps-hide-login"
-PLUGINSTOINSTALLANDACTIVATE="duplicate-post updraftplus"
+PLUGINSTOINSTALL="iwp-client all-in-one-wp-security-and-firewall head-footer-code"
+PLUGINSTOINSTALLANDACTIVATE="duplicate-post updraftplus wps-hide-login"
 
 ### /SET SOME DIRECTORIES ###
 
@@ -32,5 +32,6 @@ $WPCLIRUNNER option update updraft_retain 4
 $WPCLIRUNNER option update updraft_interval_database daily
 $WPCLIRUNNER option update updraft_retain_db 30
 
+$WPCLIRUNNER option update whl_page onoffice-admin
 
 cd $RUNDIR
