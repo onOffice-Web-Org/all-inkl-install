@@ -3,7 +3,7 @@ readonly OOISVER="1.0.1"
 readonly OOIS="oOWeb-WP-Migration-Script $OOISVER"
 
 ### SET WP DOCROOT ###
-WPDOCROOT=/website-de.onofficeweb.com/htdocs/ # required
+WPDOCROOT=/12345.onofficeweb.com/htdocs/ # required
 ### /SET ###
 
 
