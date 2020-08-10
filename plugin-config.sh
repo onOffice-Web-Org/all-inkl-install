@@ -3,7 +3,7 @@ readonly OOISVER="1.0.0"
 readonly OOIS="oOWeb-WP-Plugins-Install-Script $OOISVER"
 
 ### SET WP DOCROOT ###
-WPDOCROOT=/website-de.onofficeweb.com/htdocs/ # required
+WPDOCROOT=/12345.onofficeweb.com/htdocs/ # required
 ### /SET WP DOCROOT ###
 
 
@@ -32,6 +32,6 @@ $WPCLIRUNNER option update updraft_retain 4
 $WPCLIRUNNER option update updraft_interval_database daily
 $WPCLIRUNNER option update updraft_retain_db 30
 
-$WPCLIRUNNER option update whl_page onoffice-admin
+# $WPCLIRUNNER option update whl_page onoffice-admin ### WP-Login crashes after this 
 
 cd $RUNDIR
