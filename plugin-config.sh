@@ -13,8 +13,8 @@ ACCOUNTNR=${USER##*\-}
 ACCOUNTDIR=/www/htdocs/$ACCOUNTNR
 WPCLIRUNNER=$ACCOUNTDIR/_oo-web-tools/wp-cli/wp-cli.phar
 
-PLUGINSTOINSTALL="iwp-client all-in-one-wp-security-and-firewall head-footer-code"
-PLUGINSTOINSTALLANDACTIVATE="duplicate-post updraftplus wps-hide-login"
+PLUGINSTOINSTALL="iwp-client all-in-one-wp-security-and-firewall head-footer-code wps-hide-login"
+PLUGINSTOINSTALLANDACTIVATE="duplicate-post updraftplus"
 
 ### /SET SOME DIRECTORIES ###
 
