@@ -1,10 +1,10 @@
 #!/bin/bash
-readonly OOISVER="1.0.2"
+readonly OOISVER="1.0.3"
 readonly OOIS="oOWeb-Install-Script $OOISVER"
 
 
 ### SET SOME DIRECTORIES ###
-ACCOUNTNR=${USER##*\-} # # ACCOUNTNR=${LOGNAME:4}
+ACCOUNTNR=${USER##*\-}
 ACCOUNTDIR=/www/htdocs/$ACCOUNTNR
 TOOLDIR=$ACCOUNTDIR/_oo-web-tools
 WPCLIDIR=$TOOLDIR/wp-cli
@@ -38,7 +38,7 @@ cd $ACCOUNTDIR
 
 ### PUT SOME MORE ALIASES ###
 echo "alias cls='clear'" >> $ACCOUNTDIR/.user_bashrc
-echo "php='php74'" >> $ACCOUNTDIR/.user_bashrc
+echo "ln -sfv /usr/bin/php74 /usr/bin/php" >> $ACCOUNTDIR/.user_bashrc
 ### /PUT SOME MORE ALIASES ###
 
 
