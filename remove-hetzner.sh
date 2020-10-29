@@ -30,6 +30,7 @@ $WPCLIRUNNER config delete automatic_updater_disabled
 $WPCLIRUNNER config delete WP_MAX_MEMORY_LIMIT
 $WPCLIRUNNER config delete WP_MEMORY_LIMIT
 $WPCLIRUNNER config delete WP_CACHE
+$WPCLIRUNNER config delete DISABLE_WP_CRON
 
 $WPCLIRUNNER option update timezone_string "Europe/Berlin"
 
