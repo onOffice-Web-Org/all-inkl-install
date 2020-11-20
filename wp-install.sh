@@ -1,5 +1,5 @@
 #!/bin/bash
-readonly OOISVER="1.0.0"
+readonly OOISVER="1.0.2"
 readonly OOIS="oOWeb-WP-Setup-Script $OOISVER"
 
 ### SET WP PARAMS ###
@@ -19,7 +19,6 @@ CONFIRM='no' # Change to "yes" after filling out lines
 RUNDIR=$(pwd)
 ACCOUNTNR=${USER##*\-} # # ACCOUNTNR=${LOGNAME:4}
 ACCOUNTDIR=/www/htdocs/$ACCOUNTNR
-WPCLIRUNNER=$ACCOUNTDIR/_oo-web-tools/wp-cli/wp-cli.phar
 ### /SET SOME DIRECTORIES ###
 
 clear
@@ -28,14 +27,14 @@ if [ "$CONFIRM" == "yes" ]; then
 cd $ACCOUNTDIR$WPDOCROOT
 WPPW=$(openssl rand -base64 12)
 
-$WPCLIRUNNER core download --locale=de_DE
-$WPCLIRUNNER config create --dbname=$WPDB --dbuser=$WPDB --dbpass=$WPDBPW --dbhost=localhost
-$WPCLIRUNNER db create
-$WPCLIRUNNER core install --url="$WPURL" --title="$WPTITLE" --admin_user="onoffice-web" --admin_password="$WPPW" --admin_email="wp-admin@onofficeweb.com"
-$WPCLIRUNNER option set blog_public 0
-$WPCLIRUNNER option set blogdescription "$WPSUBTITLE"
-$WPCLIRUNNER plugin delete hello akismet
-$WPCLIRUNNER theme delete twentyseventeen twentynineteen
+wp core download --locale=de_DE
+wp config create --dbname=$WPDB --dbuser=$WPDB --dbpass=$WPDBPW --dbhost=localhost
+wp db create
+wp core install --url="$WPURL" --title="$WPTITLE" --admin_user="onoffice-web" --admin_password="$WPPW" --admin_email="wp-admin@onofficeweb.com"
+wp option set blog_public 0
+wp option set blogdescription "$WPSUBTITLE"
+wp plugin delete hello akismet
+wp theme delete twentyseventeen twentynineteen
 
 # TODO: Add standard plugins
 
