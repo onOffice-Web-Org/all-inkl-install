@@ -7,8 +7,7 @@ Installation script for ALL-INKL.COM (WP-CLI, node, npm)
 3. Run script ("./oo-install.sh")
 
 ## What is being installed?
-1. WP-CLI (Command line interface for WordPress)
-2. NVM (Version Manager for Node.js)
+1. NVM (Version Manager for Node.js)
 
 ---
 
