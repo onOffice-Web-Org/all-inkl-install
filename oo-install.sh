@@ -1,30 +1,16 @@
 #!/bin/bash
-readonly OOISVER="1.0.3"
+readonly OOISVER="1.1.0"
 readonly OOIS="oOWeb-Install-Script $OOISVER"
 
 
 ### SET SOME DIRECTORIES ###
 ACCOUNTNR=${USER##*\-}
 ACCOUNTDIR=/www/htdocs/$ACCOUNTNR
-TOOLDIR=$ACCOUNTDIR/_oo-web-tools
-WPCLIDIR=$TOOLDIR/wp-cli
 ### /SET SOME DIRECTORIES ###
 
 clear
 
 cd $ACCOUNTDIR
-mkdir $TOOLDIR
-
-
-### INSTALL WP-CLI ###
-mkdir $WPCLIDIR
-cd $WPCLIDIR
-curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
-chmod +x $WPCLIDIR/wp-cli.phar
-echo "alias wp='$WPCLIDIR/wp-cli.phar'" >> $ACCOUNTDIR/.user_bashrc
-cd $ACCOUNTDIR
-### /INSTALL WP-CLI ###
-
 
 ### INSTALL NVM ###
 cp /.bashrc /.oo-backup-bashrc
@@ -35,12 +21,10 @@ sed -i ''$LINESINBASHRC',$ {/NVM_DIR/d;} ' /.bashrc # Remove last lines containi
 cd $ACCOUNTDIR
 ### /INSTALL NVM ###
 
-
 ### PUT SOME MORE ALIASES ###
 echo "alias cls='clear'" >> $ACCOUNTDIR/.user_bashrc
 echo "ln -sfv /usr/bin/php74 /usr/bin/php" >> $ACCOUNTDIR/.user_bashrc
 ### /PUT SOME MORE ALIASES ###
-
 
 ### MARK END TIME OF SCRIPT ###
 ENDTIME=$(date)
