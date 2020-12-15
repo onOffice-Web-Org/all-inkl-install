@@ -25,7 +25,7 @@ clear
 if [ "$CONFIRM" == "yes" ]; then
 
 cd $ACCOUNTDIR$WPDOCROOT
-WPPW=$(openssl rand -base64 12)
+WPPW=$(openssl rand -base64 64 | base64 | head -c 14)
 
 wp core download --locale=de_DE
 wp config create --dbname=$WPDB --dbuser=$WPDB --dbpass=$WPDBPW --dbhost=localhost
