@@ -34,9 +34,7 @@ wp core install --url="$WPURL" --title="$WPTITLE" --admin_user="onoffice-web" --
 wp option set blog_public 0
 wp option set blogdescription "$WPSUBTITLE"
 wp plugin delete hello akismet
-wp theme delete twentyseventeen twentynineteen
-
-# TODO: Add standard plugins
+wp theme delete twentyseventeen twentynineteen twentytwenty
 
 cd $RUNDIR
 printf "\n\n\n +++ Temporary (please change) +++\n\n\n$WPPW\n\n\n"
