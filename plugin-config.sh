@@ -4,6 +4,7 @@ readonly OOIS="oOWeb-WP-Plugins-Install-Script $OOISVER"
 
 ### SET WP DOCROOT ###
 WPDOCROOT=/12345.onofficeweb.com/htdocs/ # required
+ACF_KEY=12345 #required
 ### /SET WP DOCROOT ###
 
 
@@ -11,11 +12,18 @@ WPDOCROOT=/12345.onofficeweb.com/htdocs/ # required
 RUNDIR=$(pwd)
 ACCOUNTNR=${USER##*\-}
 ACCOUNTDIR=/www/htdocs/$ACCOUNTNR
+PLUGINPATH="${ACCOUNTDIR}${WPDOCROOT}wp-content/plugins/"
 
-PLUGINSTOINSTALL="iwp-client all-in-one-wp-security-and-firewall head-footer-code wps-hide-login"
+PLUGINSTOINSTALL="iwp-client all-in-one-wp-security-and-firewall acf-extended head-footer-code wps-hide-login"
 PLUGINSTOINSTALLANDACTIVATE="duplicate-post updraftplus"
 
 ### /SET SOME DIRECTORIES ###
+
+### DOWNLOAD ACF PRO ###
+ACFFILE="$PLUGINPATH/advanced-custom-fields-pro.zip"
+
+wget -O ${ACFFILE} "http://connect.advancedcustomfields.com/index.php?p=pro&a=download&k=$ACF_KEY"
+
 
 clear
 
@@ -23,6 +31,9 @@ cd $ACCOUNTDIR$WPDOCROOT
 
 wp plugin install $PLUGINSTOINSTALL
 wp plugin install $PLUGINSTOINSTALLANDACTIVATE --activate
+wp plugin install ${ACFFILE} --activate
+
+rm ${ACFFILE}
 
 ### CONFIG Updraft Plus ###
 wp option update updraft_interval weekly
