@@ -37,7 +37,20 @@ wp plugin delete hello akismet
 wp theme delete twentyseventeen twentynineteen twentytwenty
 
 cd $RUNDIR
+
+cat << "EOF"
+#
+#
+#  _       ______     ____                                          __
+# | |     / / __ \   / __ \____ ____________      ______  _________/ /
+# | | /| / / /_/ /  / /_/ / __ `/ ___/ ___/ | /| / / __ \/ ___/ __  /
+# | |/ |/ / ____/  / ____/ /_/ (__  |__  )| |/ |/ / /_/ / /  / /_/ /
+# |__/|__/_/      /_/    \__,_/____/____/ |__/|__/\____/_/   \__,_/
+#
+#
+EOF
 printf "\n\n\n +++ Temporary (please change) +++\n\n\n$WPPW\n\n\n"
+
 exit
 
 else 
