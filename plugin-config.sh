@@ -20,7 +20,7 @@ PLUGINSTOINSTALLANDACTIVATE="duplicate-post updraftplus"
 ### /SET SOME DIRECTORIES ###
 
 ### DOWNLOAD ACF PRO ###
-ACFFILE="$PLUGINPATH/advanced-custom-fields-pro.zip"
+ACFFILE="{$PLUGINPATH}advanced-custom-fields-pro.zip"
 
 wget -O ${ACFFILE} "http://connect.advancedcustomfields.com/index.php?p=pro&a=download&k=$ACF_KEY"
 
