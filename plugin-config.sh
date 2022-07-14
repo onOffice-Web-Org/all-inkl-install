@@ -14,8 +14,8 @@ ACCOUNTNR=${USER##*\-}
 ACCOUNTDIR=/www/htdocs/$ACCOUNTNR
 PLUGINPATH="${ACCOUNTDIR}${WPDOCROOT}wp-content/plugins/"
 
-PLUGINSTOINSTALL="iwp-client all-in-one-wp-security-and-firewall acf-extended head-footer-code wps-hide-login"
-PLUGINSTOINSTALLANDACTIVATE="duplicate-post updraftplus"
+PLUGINSTOINSTALL="all-in-one-wp-security-and-firewall head-footer-code"
+PLUGINSTOINSTALLANDACTIVATE="duplicate-post updraftplus iwp-client acf-extended wps-hide-login"
 
 ### /SET SOME DIRECTORIES ###
 
@@ -42,6 +42,7 @@ wp option update updraft_interval_database daily
 wp option update updraft_retain_db 30
 
 ### Rewrite Permalinks to Postname to enable wps-hide-login
-wp rewrite structure ‘/%postname%/’
+wp option update whl_page “onoffice-web” –skip-plugins –skip-themes
+wp rewrite structure /%postname%/
 
 cd $RUNDIR
