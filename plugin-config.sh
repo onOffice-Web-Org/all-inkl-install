@@ -42,7 +42,8 @@ wp option update updraft_interval_database daily
 wp option update updraft_retain_db 30
 
 ### Rewrite Permalinks to Postname to enable wps-hide-login
-wp option update whl_page onoffice-web
+wp option update whl_page onoffice-admin
 wp rewrite structure /%postname%/
+wp rewrite flush
 
 cd $RUNDIR
